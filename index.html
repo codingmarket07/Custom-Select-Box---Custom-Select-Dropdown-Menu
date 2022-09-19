@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom Select Box||Custom Select Dropdown Box</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="title">
+    Sort by
+  </div>
+  <div class="select_wrap">
+    <ul class="default_option">
+      <div class="icon">
+        <ion-icon name="chevron-down-outline"></ion-icon>
+      </div>
+      <li>
+        <div class="option">
+          <p>Recommended</p>
+        </div>
+      </li>
+    </ul>
+    <ul class="select_ul">
+      <li class="active">
+        <div class="option">
+          <p>Recommended</p>
+        </div>
+      </li>
+      <li>
+        <div class="option">
+          <p>Latest</p>
+        </div>
+      </li>
+      <li>
+        <div class="option">
+          <p>Avg Customer Roting</p>
+        </div>
+      </li>
+      <li>
+        <div class="option">
+          <p>Price: Low to High</p>
+        </div>
+      </li>
+      <li>
+        <div class="option">
+          <p>Price: High to Low</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  $(".default_option").click(function () {
+    $(this).parent().toggleClass("active");
+  });
+
+  $(".select_ul li").click(function () {
+    var currentele = $(this).html();
+    $(".default_option li").html(currentele);
+    $(".select_ul li").removeClass("active");
+    $(this).addClass("active");
+    $(this).parents(".select_wrap").removeClass("active");
+  });
+
+</script>
+
+</body>
+</html>
